@@ -33,6 +33,24 @@ radio.onReceivedNumber(function (receivedNumber) {
     } else if (receivedNumber == 8) {
         led.plot(4, 4)
         diareac2()
+    } else if (receivedNumber == 9) {
+        basic.showLeds(`
+            # . . . .
+            # . . . .
+            # . . . .
+            # . . . .
+            # . . . .
+            `)
+        linksom()
+    } else if (receivedNumber == 10) {
+        basic.showLeds(`
+            . . . . #
+            . . . . #
+            . . . . #
+            . . . . #
+            . . . . #
+            `)
+        rechtsom()
     } else {
         led.plot(2, 2)
         stop()
@@ -101,8 +119,8 @@ function achteruit () {
 function linksom () {
     motor.MotorRun(motor.Motors.M1, motor.Dir.CCW, speed)
     motor.MotorRun(motor.Motors.M2, motor.Dir.CW, speed)
-    motor.MotorRun(motor.Motors.M3, motor.Dir.CW, speed)
-    motor.MotorRun(motor.Motors.M4, motor.Dir.CCW, speed)
+    motor.MotorRun(motor.Motors.M3, motor.Dir.CCW, speed)
+    motor.MotorRun(motor.Motors.M4, motor.Dir.CW, speed)
 }
 let speed = 0
 radio.setGroup(2)
